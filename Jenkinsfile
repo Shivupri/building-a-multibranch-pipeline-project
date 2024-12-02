@@ -16,7 +16,7 @@ pipeline {
                 // Debug output for clarity
                 bat 'echo Running test script'
                 // Ensure proper escaping
-                bat '"C:\\\"Program Files\"\\Git\\bin\\bash.exe" -c "./jenkins/scripts/test.sh"'
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "./jenkins/scripts/test.sh"'
             }
         }
     }
