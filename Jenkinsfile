@@ -6,16 +6,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                // Ensure npm is in PATH
+                bat 'where npm'
                 bat 'npm install'
             }
         }
         stage('Test') {
             steps {
-                // Added debug echo for clarity
+                // Debug output for clarity
                 bat 'echo Running test script'
-                // Corrected path and escaped quotes
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "./jenkins/scripts/test.sh"'            
-                }
+                // Ensure proper escaping
+                bat '"C:\\\"Program Files\"\\Git\\bin\\bash.exe" -c "./jenkins/scripts/test.sh"'
+            }
         }
     }
 }
